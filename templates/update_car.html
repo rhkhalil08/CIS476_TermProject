@@ -1,0 +1,28 @@
+<h2>Update Car Listing: {{ car['model'] }}</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="model">Car Model</label>
+        <input type="text" name="model" value="{{ car['model'] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="number" name="year" value="{{ car['year'] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price per Day</label>
+        <input type="text" name="price" value="{{ car['price'] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="availability">Availability</label>
+        <input type="text" name="availability" value="{{ car['availability'] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" name="location" value="{{ car['location'] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="mileage">Mileage</label>
+        <input type="number" name="mileage" value="{{ car['mileage'] }}" required>
+    </div>
+    <button type="submit">Update Car Listing</button>
+</form>

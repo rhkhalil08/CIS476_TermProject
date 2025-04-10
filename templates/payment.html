@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<body>
+    <h1>Payment for Car Rental</h1>
+    <p>Car: {{ car_id }}</p>
+    <p>Rental Period: {{ start_date }} to {{ end_date }}</p>
+    <p>Total Amount: ${{ amount }}</p>
+    
+    <form method="POST">
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<h2>Create a Car Listing</h2>
+<form method="POST" action="{{ url_for('add_car') }}">
+    <div class="form-group">
+        <label for="model">Car Model</label>
+        <input type="text" name="model" required>
+    </div>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="number" name="year" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price per Day</label>
+        <input type="text" name="price" required>
+    </div>
+    <div class="form-group">
+        <label for="availability">Availability</label>
+        <input type="text" name="availability" required>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" name="location" required>
+    </div>
+    <div class="form-group">
+        <label for="mileage">Mileage</label>
+        <input type="number" name="mileage" required>
+    </div>
+    <button type="submit" class="submit-btn">Add Car Listing</button>
+</form>
+
+<hr>
+
+<h2>Available Cars for Booking</h2>
+<ul>
+    {% for car in car_listings %}
+    <li>
+        <strong>{{ car["model"] }}</strong> ({{ car["year"] }}) - ${{ car["price"] }} per day - 
+        Availability: {{ car["availability"] }} - Location: {{ car["location"] }}
+        <!-- Book Now button for each car -->
+        <a href="{{ url_for('booking', car_id=car['model']) }}" class="action-btn book-btn">Book Now</a>
+        <!-- Update button for each car -->
+        <a href="{{ url_for('update_car', car_model=car['model']) }}" class="action-btn update-btn">Update</a>
+        <!-- Delete button for each car -->
+        <a href="{{ url_for('delete_car', car_model=car['model']) }}" class="action-btn delete-btn">Delete</a>
+    </li>
+    {% else %}
+    <li>No cars available yet.</li>
+    {% endfor %}
+</ul>

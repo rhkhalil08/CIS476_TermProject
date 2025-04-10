@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <style>
+        /* Add some margin to space out the form elements */
+        form {
+            margin-top: 20px;
+        }
+        textarea, input[type="email"] {
+            margin-bottom: 15px; /* Adds space below the text area and email input */
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Messages</h2>
+    
+    <form method="POST">
+        <textarea name="message" rows="4" cols="50" placeholder="Write your message..."></textarea><br>
+        <input type="email" name="receiver_email" placeholder="Recipient's Email" required><br>
+        <button type="submit">Send Message</button>
+    </form>
+    
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
